@@ -7,12 +7,13 @@ Projeto Final de Programação para Internet
 3.0 - tabelas sql
 
 -------------------------------------
+**Fazendo**
+>1.3 - Novo endereço (front e back) JÃO\
+>1.4 - login e sessoes (front e back) FELIPE\
+>1.5 - agendamento de consultas (front e back) CASSÃO\
 
+-------------------------------------
 **Para Fazer**
-
->1.3 - Novo endereço (front e back)\
->1.4 - login e sessoes (front e back)\
->1.5 - agendamento de consultas (front e back)\
 >2.0 - nav bar parte privada (front)\
 >2.1 - cadastro funcionarios (front e back)\
 >2.2 - cadastro paciente (front e back)\
