@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+      <div class="container loginbox">
+        <main>
+        <h1>Login</h1>
+        <form>
+            <div class="form-floating mb-3">
+                <input type="email" id="email" name="email" autocomplete="on" class="form-control" placeholder="">
+                <label for="email" class="form-label">Email:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" id="senha" name="senha" autocomplete="off" class="form-control" placeholder="">
+                <label for="senha" class="form-label">Senha:</label>
+            <div class="mt-3">
+                <button class="btn btn-primary" id="btnlogin">Entrar</button>
+            </div>
+        </form>
+    </div>
+    <div class="alert alert-warning alert-dismissible" role="alert" id="loginFailMsg">
+      <strong>Email ou Senha incorretos</strong>
+      <button type="button" class="btn-close" data-dismiss="alert"></button>
+    </main>
+    </div>
+
+
+  <script>
+
+    function enviaForm() {
+      
+      let xhr = new XMLHttpRequest();
+      
+      xhr.open("POST", "php/login.php");
+      xhr.onload = function () {
+        if (xhr.status != 200) {
+          console.error("Falha inesperada: " + xhr.responseText);
+          return;
+        }
+        try {
+          var response = JSON.parse(xhr.responseText);
+        }
+        catch (e) {
+          console.error("String JSON inválida: " + xhr.responseText);
+          return;
+        }
+        const msg  = document.querySelector("#loginFailMsg");
+        if (response.success){
+          msg.style.display = "none";
+          window.location = response.detail;
+        }
+        else{
+           msg.style.display = "block";
+        }
+      }
+
+      xhr.onerror = function () {
+        console.error("Erro de rede - requisição não finalizada");
+      };
+      const form = document.querySelector("form");
+      xhr.send(new FormData(form));
+    }
+
+    window.onload = function () {
+      const btnLogin = document.querySelector("#btnlogin");
+      btnLogin.onclick = enviaForm;
+    }
+
+  </script>
+
+</body>
+
+</html>
