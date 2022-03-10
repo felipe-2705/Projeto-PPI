@@ -4,14 +4,14 @@ Projeto Final de Programação para Internet
 **Feitos**\
 1.1 - home \
 1.2 - galeria \
+>1.4 - login e sessoes (front e back) Precisa de teste ainda  FELIPE \
 3.0 - tabelas sql
 
 -------------------------------------
 **Fazendo**
 >1.3 - Novo endereço (front e back) JÃO\
->1.4 - login e sessoes (front e back) FELIPE\
 >1.5 - agendamento de consultas (front e back) CASSÃO\
-
+>2.1 - cadastro funcionarios (front e back)\
 -------------------------------------
 **Para Fazer**
 >2.0 - nav bar parte privada (front)\
