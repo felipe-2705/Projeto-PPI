@@ -33,8 +33,8 @@ function inicia_sessao($email,$senha){
     $pdo = mysqlConnect();
     try{
         $sql = <<<SQL
-        SELECT codigo,email,senha_hash,nome,sexo,telefone,cep,logradouro,cidade,estado,data_contrato,salario
-        FROM p_pessoa INNER JOIN p_funcionario WHERE p_pessoa.codigo = codigo
+        SELECT p_pessoa.codigo,email,senha_hash,nome,sexo,telefone,cep,logradouro,cidade,estado,data_contrato,salario
+        FROM p_pessoa INNER JOIN p_funcionario WHERE p_pessoa.codigo = p_funcionario.codigo
 SQL;
 $stmt = $pdo->query($sql);
     }
@@ -56,7 +56,7 @@ while($row = $stmt->fetch()){
         $_SESSION["estado"] = $row["estado"];
         $_SESSION["data_contrato"] = $row["data_contrato"];
         $_SESSION["salario"] = $row["salario"];
-        $_SESSION["codigo"]  = $row["codigo"];
+        $_SESSION["codigo"]  = $row["p_pessoa.codigo"];
         ////// checando se é um medico 
         try{
             $sql = <<<SQL
