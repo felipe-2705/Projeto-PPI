@@ -14,11 +14,9 @@ $email = $_POST["email"] ?? "";
 $senha = $_POST["senha"] ?? "";
 if(inicia_sessao($email,$senha)){
        $reposta = new RequestResponse(TRUE,"cadastro-funcionario.php");
-       header('Content-type: application/json');
        echo json_encode($reposta);
 }else{
     $reposta = new RequestResponse(FALSE,"");
-    header('Content-type: application/json');
     echo json_encode($reposta);
 }
 ?>

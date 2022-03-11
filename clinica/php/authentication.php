@@ -1,7 +1,7 @@
 <?
 require "conexaoMysql.php";
 
-function check_login($email,$senha){
+function check_login($email,$senha_hash){
 $pdo = mysqlConnect();
 try {
   $sql = <<<SQL
@@ -16,7 +16,7 @@ catch (Exception $e) {
 while($row =$stmt->fetch()){
     if($email == $row['email']){
         $senhaHash_db =  $row['senha_hash'];
-        if(password_verify($senha,$senhaHash_db)){
+        if($senha_hash == $senhaHash_db){
         return TRUE;
         }
     }
@@ -85,13 +85,14 @@ session_destroy();
 }
 
 function check_sessao(){
+    session_start();
     if(!isset($_SESSION["email"],$_SESSION["senha_hash"])){
         return  FALSE;
     }
 
-    if(!check_login($_SESSION["email"],$_SESSION["senha_hash"])){
-        return FALSE;
-    }
+     if(!check_login($_SESSION["email"],$_SESSION["senha_hash"])){
+         return FALSE;
+     }
     return TRUE;
 }
 

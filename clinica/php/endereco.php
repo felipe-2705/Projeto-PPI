@@ -14,14 +14,10 @@
   try {
 
     $sql = <<<SQL
-    -- Repare que a coluna Id foi omitida por ser auto_increment
-    INSERT INTO EnderecoAjax (cep, logradouro, cidade, estado)
+    INSERT INTO p_enderecos(cep, logradouro, cidade, estado)
     VALUES (?, ?, ?, ?)
-    SQL;
+SQL;
   
-    // Neste caso utilize prepared statements para prevenir
-    // ataques do tipo SQL Injection, pois precisamos
-    // cadastrar dados fornecidos pelo usuário 
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
       $cep, $logradouro, $cidade, $estado
