@@ -15,7 +15,7 @@
 
     $sql = <<<SQL
     -- Repare que a coluna Id foi omitida por ser auto_increment
-    INSERT INTO EnderecoAjax (cep, logradouro, cidade, estado)
+    INSERT INTO p_endereco (cep, logradouro, cidade, estado)
     VALUES (?, ?, ?, ?)
     SQL;
   
