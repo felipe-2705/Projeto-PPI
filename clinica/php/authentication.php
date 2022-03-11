@@ -5,26 +5,23 @@ function check_login($email,$senha){
 $pdo = mysqlConnect();
 try {
   $sql = <<<SQL
-  SELECT senha_hash
-  FROM p_pessoa INNER JOIN p_funcionario WHERE p_pessoa.email = ? 
-  LIMIT 1
+  SELECT senha_hash, email
+  FROM p_pessoa INNER JOIN p_funcionario WHERE p_pessoa.codigo = p_funcionario.codigo 
 SQL;
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$email]);
+$stmt = $pdo->query($sql);
 } 
 catch (Exception $e) {
   exit('Ocorreu uma falha: ' . $e->getMessage());
 }
-if ($row =$stmt->fetch()){
-    $senhaHash_db =  $row['senha_hash'];
-    if(password_verify($senha,$senhaHash_db)){
-       return TRUE;
-    }else{
-     return FALSE;
+while($row =$stmt->fetch()){
+    if($email == $row['email']){
+        $senhaHash_db =  $row['senha_hash'];
+        if(password_verify($senha,$senhaHash_db)){
+        return TRUE;
+        }
     }
-}else{
-  return FALSE;
 }
+return FALSE;
 }
 
 
@@ -43,7 +40,7 @@ catch (Exception $e) {
         exit('Ocorreu uma falha: ' . $e->getMessage());
 }
 while($row = $stmt->fetch()){
-    if($row['email']==$email and password_verify($senha,$row["senha"]) ){
+    if($row['email']==$email and password_verify($senha,$row["senha_hash"]) ){
         session_start();
         $_SESSION["email"] = $email;
         $_SESSION["senha_hash"] = $row["senha_hash"];

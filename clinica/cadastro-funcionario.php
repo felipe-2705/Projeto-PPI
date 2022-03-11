@@ -42,7 +42,7 @@
 
     <main>
       <h1>Cadastro de Funcionario</h1>
-      <form action="cadastro-func.php" method="POST" class="row g-3">
+      <form class="row g-3">
 
         <!-- Nome e Sexo -->
         <div class="col-sm-6">
@@ -62,6 +62,62 @@
         <div class="col-sm-3">
         <input type="checkbox" class="form-check-input" name="medico" id="medico">
         <label for="medico" class="form-check-label">Medico</label>
+        </div>
+
+         <!-- Telefone CEP LOGRADOURO CIDADE BAIRRO ESTADO-->
+
+         <div class="col-sm-6">
+          <label for="telefone" class="form-label">Telefone</label>
+          <input type="tel" name="telefone" class="form-control" id="telefone">
+        </div>
+        
+        <div class="col-sm-3">
+          <label for="cep" class="form-label">CEP</label>
+          <input type="text" name="cep" class="form-control" id="cep">
+        </div>
+
+        <div class="col-sm-3">
+          <label for="estado" class="form-label">Estado</label>
+          <select name="estado" class="form-select" id="estado">
+            <option selected>Selecione</option>
+            <option value="MG">MG</option>
+            <option value="RJ">RJ</option>
+            <option value="SP">SP</option>
+            <option value="ES">ES</option>
+            <option value="SC">SC</option>
+            <option value="RS">RS</option>
+            <option value="PR">PR</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="GO">GO</option>
+            <option value="TO">TO</option>
+            <option value="BA">BA</option>
+            <option value="PE">PE</option>
+            <option value="AL">AL</option>
+            <option value="PB">PB</option>
+            <option value="SE">SE</option>
+            <option value="PI">PI</option>
+            <option value="MA">MA</option>
+            <option value="PA">PA</option>
+            <option value="CE">CE</option>
+            <option value="RN">RN</option>
+            <option value="AP">AP</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="AM">AM</option>
+            <option value="AC">AC</option>
+          </select>
+        </div>
+
+
+        <div class="col-sm-6">
+          <label for="logradouro" class="form-label">Logradouro</label>
+          <input type="text" name="logradouro" class="form-control" id="logradouro">
+        </div>
+
+        <div class="col-sm-6">
+          <label for="cidade" class="form-label">Cidade</label>
+          <input type="text" name="cidade" class="form-control" id="cidade">
         </div>
 
         <!-- Data de contrato  salario dados medicos-->
@@ -93,22 +149,54 @@
 
 
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
+          <button type="button" class="btn btn-primary" id="btncadastro">Cadastrar</button>
         </div>
       </form>
+      <div class="alert alert-warning alert-dismissible" role="alert" id="loginFailMsg" style="display: none;">
+          <strong>Dados Cadastrados com Sucesso</strong>
+          <button type="button" class="btn-close" data-dismiss="alert"></button>
+      </div>
     </main>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy"
     crossorigin="anonymous"></script>
 
     <script>
+      function closeAlert(){
+        const msg  = document.querySelector("#loginFailMsg");
+        msg.style.display = "none";
+    }
         function revelMedico(s){
             const camps =  document.querySelectorAll(".med-camp"); // seleciona todos os med-camps 
             for(let i= 0; i<camps.length;i++){
                 camps[i].style.display = s;
             }
         }
+        
+      function enviaForm() {
+      
+        let xhr = new XMLHttpRequest();
+        
+        xhr.open("POST", "./php/cadastro-func.php");
+        xhr.onload = function () {
+          if (xhr.status != 200) {
+            console.error("Falha inesperada: " + xhr.responseText);
+            return;
+          }else{
+            const msg  = document.querySelector("#loginFailMsg");
+            msg.style.display = "block";
+          }
+
+        }
+
+        xhr.onerror = function () {
+          console.error("Erro de rede - requisição não finalizada");
+        };
+        const form = document.querySelector("form");
+        xhr.send(new FormData(form));
+    }
 
         window.onload = function (){
             revelMedico("none");
@@ -120,6 +208,12 @@
                 revelMedico("none");
                }
            })
+
+           const btncadastro = document.querySelector("#btncadastro");
+          btncadastro.onclick = enviaForm;
+
+          const btnAlert  = document.querySelector(".btn-close");
+          btnAlert.onclick = closeAlert;
         }
     </script>
 
