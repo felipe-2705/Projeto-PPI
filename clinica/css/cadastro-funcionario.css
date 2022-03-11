@@ -1,0 +1,65 @@
+body{
+    background-color: aliceblue;
+}
+
+main {
+    padding: 2rem;
+    padding-top: 2rem;
+    max-width: 60%;
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px rgb(20, 24, 247);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  form {
+    margin-bottom: 2rem;
+  }
+
+
+  header{
+    background-color: rgb(38, 0, 255);
+    color: #fff;
+    text-align: center;
+    padding: 4px;
+    width: 100%;
+    height: 20%;
+    margin: 0;
+    top: 0;
+  }
+  footer{
+    background-color: rgb(38, 0, 255);
+    color: #fff;
+    text-align: center;
+    padding: 2px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    bottom: 0;
+    display: block;
+  }
+  
+  
+  #foto{
+    display: inline-block;
+    width:5%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-right: 20px;
+  
+  }
+  
+  #h1{
+    font-family: MV BOLI;
+    font-size: 3rem;
+    padding-bottom: 2%;
+    display: inline-block;
+  }
+
+.med-camp{
+    display: none;
+}
