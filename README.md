@@ -1,13 +1,14 @@
 # Projeto-PPI
 Projeto Final de Programação para Internet
 
-**Feitos**\
+**Feitos** \
 1.1 - home FELIPE \
 1.2 - galeria FELIPE\
 1.4 - login e sessoes (front e back)FELIPE \
 3.0 - tabelas sql FELIPE\
 2.1 - cadastro funcionarios (front e back) Felipe\
-1.3 - Novo endereço (front e back) JÃO\
+1.3 - Novo endereço (front e back) JÃO
+
 -------------------------------------
 **Fazendo**
 >1.3 - Novo endereço (front e back) JÃO\
