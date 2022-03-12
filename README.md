@@ -13,10 +13,9 @@ Projeto Final de Programação para Internet
 **Fazendo**
 >1.3 - Novo endereço (front e back) JÃO\
 >1.5 - agendamento de consultas (front e back) CASSÃO\
-
+>2.0 - nav bar parte privada (front) Felipe
 -------------------------------------
 **Para Fazer**
->2.0 - nav bar parte privada (front)\
 >2.2 - cadastro paciente (front e back)\
 >2.3 - listar dados (front e back de cada item)
   >>2.3.1 - listar funcionarios\
