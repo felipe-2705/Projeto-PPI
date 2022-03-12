@@ -16,7 +16,7 @@ if(!check_sessao()){
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
   <link href="css/cadastro-funcionario.css" rel="stylesheet">
-
+  <link href="css/navbar.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,21 +25,28 @@ if(!check_sessao()){
 <div id="h1">Cliníca São Domingos</div>
 </header>
 
-<nav class="navbar navbar-expand-sm bg-light">
+<nav class="navbar navbar-expand-sm bg-ligh custom-navbar">
     <div class="container-fluid">
+<?php
+$nome =  htmlspecialchars($_SESSION["nome"]);
+echo <<<HTML
         <a class="navbar-brand" href="#">
+            Olá, $nome
           </a>
-            <ul class="navbar-nav">
-                <li class="nav-item active"><a  class="nav-link"  href="index.html">Home</a></li>
-                <li  class="nav-item"><a class="nav-link"  href="endereco.html">Endereço</a></li>
-                <li  class="nav-item"><a  class="nav-link" href="galeria.html">Galeria</a></li>
+HTML;
+?>
+            <ul class="navbar-nav" id="navbar">
+                <li class="nav-item active"><a  class="nav-link"  href="cadastro-funcionario.php">Novo funcionario</a></li>
+                <li  class="nav-item"><a class="nav-link"  href="cadastro-paciente.php">Novo paciente</a></li>
+                <li  class="nav-item"><a  class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
+                <li  class="nav-item"><a  class="nav-link" href="listar-pacientes.php">Listar Pacientes</a></li>
+                <li  class="nav-item"><a  class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
+                <li  class="nav-item"><a  class="nav-link" href="listar-todos-agendamentos.php">Listar todos agendamentos</a></li>
             </ul>
             <span></span>
     </div>
 </nav>
-
   <div class="container">
-
     <main>
       <h1>Cadastro de Funcionario</h1>
       <form class="row g-3">
@@ -197,7 +204,7 @@ if(!check_sessao()){
     }
 
     function complete_endereco(cep){
-      if (cep.length != 8) return;      
+      if (cep.length != 9) return;      
       let form = document.querySelector("form");
       fetch("./php/busca-endereco.php?cep="+cep)
       .then(response => {
@@ -236,6 +243,7 @@ if(!check_sessao()){
         }
     </script>
 
+    <script src="priv-navbar.js"></script>
     <footer class="fixed-bottom">
       05 de Março de 2022. Projeto de Programaçao para internet <strong>UFU</strong>.
   </footer>

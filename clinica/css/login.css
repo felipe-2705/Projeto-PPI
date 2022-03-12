@@ -7,14 +7,15 @@ main {
   padding: 2rem;
   padding-top: 2rem;
   width: 30%;
+  max-height: 70%;
+  overflow: auto;
   border: 0.5px solid lightgray;
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 5px 5px 5px rgb(20, 24, 247);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin: 0 auto ;
+  ;
 }
 
 form {

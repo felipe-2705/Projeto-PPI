@@ -1,4 +1,4 @@
--- DROP TABLE p_agenda, p_paciente, p_medico, p_funcionario, p_pessoa;
+DROP TABLE p_agenda, p_paciente, p_medico, p_funcionario, p_pessoa;
 
 CREATE TABLE p_enderecos
 (
