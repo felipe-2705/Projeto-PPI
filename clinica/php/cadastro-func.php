@@ -1,10 +1,10 @@
 <?
 require "./authentication.php";
 
-// if(!check_sessao()){
-//     header("location: ../login.html");
-//     exit();
-// }
+if(!check_sessao()){
+     header("location: ../login.html");
+     exit();
+}
 
 $pdo = mysqlConnect();
 

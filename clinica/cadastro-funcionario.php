@@ -1,10 +1,10 @@
-<!-- <?
-//require "./php/authentication.php";
-//if(!check_sessao()){
-//    header("location: login.html");
-//    exit();
-//}
-?>  -->
+<?
+require "./php/authentication.php";
+if(!check_sessao()){
+      header("location: login.html");
+      exit();
+}
+?>
 <!doctype html>
 <html lang="pt-BR">
 
@@ -168,6 +168,8 @@
         const msg  = document.querySelector("#loginFailMsg");
         msg.style.display = "none";
     }
+
+
         function revelMedico(s){
             const camps =  document.querySelectorAll(".med-camp"); // seleciona todos os med-camps 
             for(let i= 0; i<camps.length;i++){
@@ -176,9 +178,7 @@
         }
         
       function enviaForm() {
-      
         let xhr = new XMLHttpRequest();
-        
         xhr.open("POST", "./php/cadastro-func.php");
         xhr.onload = function () {
           if (xhr.status != 200) {
@@ -188,14 +188,32 @@
             const msg  = document.querySelector("#loginFailMsg");
             msg.style.display = "block";
           }
-
         }
-
         xhr.onerror = function () {
           console.error("Erro de rede - requisição não finalizada");
         };
         const form = document.querySelector("form");
         xhr.send(new FormData(form));
+    }
+
+    function complete_endereco(cep){
+      if (cep.length != 8) return;      
+      let form = document.querySelector("form");
+      fetch("./php/busca-endereco.php?cep="+cep)
+      .then(response => {
+          if (!response.ok) {
+            throw new Error(response.status);
+          }
+          return response.json();
+        })
+        .then(endereco => {
+          form.logradouro.value = endereco.logradouro;
+          form.cidade.value = endereco.cidade;
+          form.estado.value = endereco.estado;
+        })
+        .catch(error => {
+          console.error('Falha inesperada: ' + error);
+        });
     }
 
         window.onload = function (){
@@ -208,12 +226,13 @@
                 revelMedico("none");
                }
            })
-
            const btncadastro = document.querySelector("#btncadastro");
           btncadastro.onclick = enviaForm;
-
           const btnAlert  = document.querySelector(".btn-close");
           btnAlert.onclick = closeAlert;
+
+          const input_cep = document.querySelector("#cep");
+          input_cep.onkeyup = ()=> complete_endereco(input_cep.value);
         }
     </script>
 
