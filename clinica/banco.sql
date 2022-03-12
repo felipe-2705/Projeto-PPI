@@ -1,4 +1,4 @@
--- DROP TABLE p_agenda, p_paciente, p_medico, p_funcionario, p_pessoa;
+-- DROP TABLE p_agenda, p_pacientes, p_medicos, p_funcionarios, p_pessoas;
 
 CREATE TABLE p_enderecos
 (
@@ -9,7 +9,7 @@ CREATE TABLE p_enderecos
    cidade varchar(50)
 ) ENGINE=InnoDB;
 
-CREATE TABLE p_pessoa
+CREATE TABLE p_pessoas
 (
    codigo int PRIMARY KEY auto_increment,
    nome varchar(50),
@@ -22,30 +22,30 @@ CREATE TABLE p_pessoa
    logradouro varchar(50)
 ) ENGINE=InnoDB;
 
-CREATE TABLE p_funcionario
+CREATE TABLE p_funcionarios
 (
    codigo int PRIMARY KEY, 
    data_contrato date,
    salario float,
    senha_hash varchar(255),
-   FOREIGN KEY (codigo) REFERENCES p_pessoa(codigo) ON DELETE CASCADE
+   FOREIGN KEY (codigo) REFERENCES p_pessoas(codigo) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
-CREATE TABLE p_medico
+CREATE TABLE p_medicos
 (
    codigo int PRIMARY KEY,
    crm varchar(7),
    especialidade varchar(50),
-   FOREIGN KEY (codigo) REFERENCES p_funcionario(codigo) ON DELETE CASCADE
+   FOREIGN KEY (codigo) REFERENCES p_funcionarios(codigo) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
-CREATE TABLE p_paciente
+CREATE TABLE p_pacientes
 (
    codigo int PRIMARY KEY,
    peso float,
    altura float,
    tipo_sanguineo char(3),
-   FOREIGN KEY (codigo) REFERENCES p_pessoa(codigo) ON DELETE CASCADE
+   FOREIGN KEY (codigo) REFERENCES p_pessoas(codigo) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE p_agenda
@@ -57,7 +57,7 @@ CREATE TABLE p_agenda
    sexo char(1),
    email varchar(50),
    codigo_medico int not null,
-   FOREIGN KEY (codigo_medico) REFERENCES p_medico(codigo) ON DELETE CASCADE
+   FOREIGN KEY (codigo_medico) REFERENCES p_medicos(codigo) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 
@@ -68,7 +68,7 @@ VALUES
   (DEFAULT,'38400-200','Rua Tiradentes','MG','Uberlândia'),
   (DEFAULT,'38400-300','Praça Lions Clube','MG','Uberlândia');
 
-INSERT INTO p_pessoa (codigo,nome,sexo,email,telefone,cep,cidade,estado,logradouro)
+INSERT INTO p_pessoas (codigo,nome,sexo,email,telefone,cep,cidade,estado,logradouro)
 VALUES
   (DEFAULT,'Susan de Moura','F','susan@mail.com','34-43567-1234','58456-577','Santa Luzia','SC','Rua 1'),
   (DEFAULT,'Thomas dos Anjos','M','thomas@mail.com','54-43497-0987','58446-518','Camacari','PE','Rua 2'),
@@ -81,7 +81,7 @@ VALUES
   (DEFAULT,'Cyrus de Sousa','M','cyrus@mail.com','76-35623-9563','24814-902','Londrina','PR','Rua 9'),
   (DEFAULT,'Elvis Rezende','M','elvis@mail.com','45-78346-9885','75732-571','Florianópolis','PE','Rua 10');
 
-INSERT INTO p_funcionario (codigo,data_contrato,salario,senha_hash)
+INSERT INTO p_funcionarios (codigo,data_contrato,salario,senha_hash)
 VALUES
   (4,'2022-11-15',46734.76,'$2y$10$AOSgohSGeM/n4jj.YQljDeVoujX876hvyIzA13JfOVUX.g1bqQtZq'),
   (5,'2022-10-13',3234.76,'$2y$10$AOSgohSGeM/n4jj.YQljDeVoujX876hvyIzA13JfOVUX.g1bqQtZq'),
@@ -91,7 +91,7 @@ VALUES
   (9,'2022-12-07',4532.76,'$2y$10$AOSgohSGeM/n4jj.YQljDeVoujX876hvyIzA13JfOVUX.g1bqQtZq'),
   (10,'2022-02-01',1045.56,'$2y$10$AOSgohSGeM/n4jj.YQljDeVoujX876hvyIzA13JfOVUX.g1bqQtZq');
 
-INSERT INTO p_medico (codigo,crm,especialidade)
+INSERT INTO p_medicos (codigo,crm,especialidade)
 VALUES
   (4,'3613019','cardiologia'),
   (5,'2102943','cardiologia'),
@@ -100,7 +100,7 @@ VALUES
   (8,'3886343','oftalmologia'),
   (9,'9785472','otorrinolaringologista');
 
-INSERT INTO p_paciente (codigo,peso,altura,tipo_sanguineo)
+INSERT INTO p_pacientes (codigo,peso,altura,tipo_sanguineo)
 VALUES
   (1,73.4,1.76,'ab+'),
   (2,89.2,1.87,'o-'),
