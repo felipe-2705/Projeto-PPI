@@ -70,16 +70,16 @@ VALUES
 
 INSERT INTO p_pessoa (codigo,nome,sexo,email,telefone,cep,cidade,estado,logradouro)
 VALUES
-  (DEFAULT,'Susan de Moura','F','nibh.quisque@hotmail.edu','34-43567-1234','58456-577','Santa Luzia','SC','Rua 1'),
-  (DEFAULT,'Thomas dos Anjos','M','et.netus@google.edu','54-43497-0987','58446-518','Camacari','PE','Rua 2'),
-  (DEFAULT,'Libby Araujo','F','odio.etiam@hotmail.couk','32-78945-1234','35731-771','Olinda','SP','Rua 3'),
-  (DEFAULT,'Scarlet Gonzaga','F','tincidunt.nunc@outlook.com','56-68943-6746','55581-274','Campos dos Goytacazes','PE','Rua 8'),
-  (DEFAULT,'Velma Galdino','F','mollis.vitae@hotmail.net','56-85376-9892','58486-263','Jaboatao dos Guararapes','MG','Rua 4'),
-  (DEFAULT,'Ava Diniz','F','blandit@protonmail.ca','89141-433','88-23474-9575','Niterói','SP','Rua 5'),
-  (DEFAULT,'Hayes de Lourdes','F','ut.sagittis@yahoo.com','86-57824-9966','96838-726','Sao Joao de Meriti','BA','Rua 6'),
-  (DEFAULT,'Isabella Fagundes','F','nisi.sem@yahoo.com','96-34623-9867','13057-693','Sao Joao de Meriti','SP','Rua 7'),
-  (DEFAULT,'Cyrus de Sousa','M','sed.dictum@protonmail.ca','76-35623-9563','24814-902','Londrina','PR','Rua 9'),
-  (DEFAULT,'Elvis Rezende','M','commodo.hendrerit@icloud.com','45-78346-9885','75732-571','Florianópolis','PE','Rua 10');
+  (DEFAULT,'Susan de Moura','F','susan@mail.com','34-43567-1234','58456-577','Santa Luzia','SC','Rua 1'),
+  (DEFAULT,'Thomas dos Anjos','M','thomas@mail.com','54-43497-0987','58446-518','Camacari','PE','Rua 2'),
+  (DEFAULT,'Libby Araujo','F','libby@mail.com','32-78945-1234','35731-771','Olinda','SP','Rua 3'),
+  (DEFAULT,'Scarlet Gonzaga','F','scarlet@mail.com','56-68943-6746','55581-274','Campos dos Goytacazes','PE','Rua 8'),
+  (DEFAULT,'Velma Galdino','F','velma@mail.com','56-85376-9892','58486-263','Jaboatao dos Guararapes','MG','Rua 4'),
+  (DEFAULT,'Ava Diniz','F','ava@mail.com','89141-433','88-23474-9575','Niterói','SP','Rua 5'),
+  (DEFAULT,'Hayes de Lourdes','F','hayes2mail.com','86-57824-9966','96838-726','Sao Joao de Meriti','BA','Rua 6'),
+  (DEFAULT,'Isabella Fagundes','F','isabella@mail.com','96-34623-9867','13057-693','Sao Joao de Meriti','SP','Rua 7'),
+  (DEFAULT,'Cyrus de Sousa','M','cyrus@mail.com','76-35623-9563','24814-902','Londrina','PR','Rua 9'),
+  (DEFAULT,'Elvis Rezende','M','elvis@mail.com','45-78346-9885','75732-571','Florianópolis','PE','Rua 10');
 
 INSERT INTO p_funcionario (codigo,data_contrato,salario,senha_hash)
 VALUES
