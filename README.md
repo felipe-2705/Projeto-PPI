@@ -7,13 +7,13 @@ Projeto Final de Programação para Internet
 1.4 - login e sessoes (front e back)FELIPE \
 3.0 - tabelas sql FELIPE\
 2.1 - cadastro funcionarios (front e back) Felipe\
-1.3 - Novo endereço (front e back) JÃO
+1.3 - Novo endereço (front e back) JÃO \
+2.0 - nav bar parte privada (front) Felipe
 
 -------------------------------------
 **Fazendo**
 >1.3 - Novo endereço (front e back) JÃO\
 >1.5 - agendamento de consultas (front e back) CASSÃO\
->2.0 - nav bar parte privada (front) Felipe
 -------------------------------------
 **Para Fazer**
 >2.2 - cadastro paciente (front e back)\
