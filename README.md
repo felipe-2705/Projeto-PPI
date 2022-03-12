@@ -14,6 +14,8 @@ Projeto Final de Programação para Internet
 **Fazendo**
 >1.3 - Novo endereço (front e back) JÃO\
 >1.5 - agendamento de consultas (front e back) CASSÃO\
+>2.2 - cadastro paciente (front e back)
+
 -------------------------------------
 **Para Fazer**
 >2.2 - cadastro paciente (front e back)\
