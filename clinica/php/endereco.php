@@ -14,7 +14,7 @@
   try {
 
     $sql = <<<SQL
-    INSERT INTO p_enderecos(cep, logradouro, cidade, estado)
+    INSERT INTO p_endereco (cep, logradouro, cidade, estado)
     VALUES (?, ?, ?, ?)
 SQL;
   
