@@ -8,7 +8,7 @@ async function addnavbar(){
     let link  = document.createElement("a");
     link.classList.add("nav-link");
     link.href = "agendamentos-medico.php";
-    link.innerHTML = "Meus agendamentos";
+    link.innerHTML = "Meus Agendamentos";
     item.appendChild(link);
 
     let container =  document.querySelector("#navbar");

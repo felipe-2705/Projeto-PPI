@@ -42,6 +42,7 @@ HTML;
       <li class="nav-item"><a class="nav-link" href="listar-todos-agendamentos.php">Listar Agendamentos</a></li>
       <li class="nav-item"><a class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
     </ul>
+    <a class="btn btn-danger navbar-btn" href="php/logout.php">Logout</a>
     <span></span>
 </div>
 </nav>
@@ -134,11 +135,11 @@ HTML;
           <label for="salario" class="form-label">Salario</label>
           <input type="text" name="salario" class="form-control" id="salario">
         </div>
-        <div class="col-sm med-camp " style:"display: none;">
+        <div class="col-sm med-camp " style="display: none;">
         <label for="crm" class="form-label">CRM</label>
           <input type="text" name="crm" class="form-control" id="crm">
         </div>
-        <div class="col-sm med-camp" style:"display: none;">
+        <div class="col-sm med-camp" style="display: none;">
         <label for="especialidade" class="form-label">Especialidade</label>
           <input type="text" name="especialidade" class="form-control" id="especialidade">
         </div>

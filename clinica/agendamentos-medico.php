@@ -6,7 +6,6 @@ if(!check_sessao()){
 }
 
 $pdo = mysqlConnect();
-session_start();
 $medico = $_SESSION["codigo"];
 
 try {
@@ -56,13 +55,15 @@ echo <<<HTML
 HTML;
 ?>
   <ul class="navbar-nav" id="navbar">
+      <li class="nav-item"><a class="nav-link" href=""><b>Meus Agendamentos</b></a></li>
       <li class="nav-item"><a class="nav-link" href="cadastro-funcionario.php">Novo Funcionário</a></li>
       <li class="nav-item"><a class="nav-link" href="cadastro-paciente.php">Novo Paciente</a></li>
       <li class="nav-item"><a class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
       <li class="nav-item"><a class="nav-link" href="listar-pacientes.php">Listar Pacientes</a></li>
-      <li class="nav-item"><a class="nav-link" href="listar-todos-agendamentos.php"><b>Listar Agendamentos</b></a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-todos-agendamentos.php">Listar Agendamentos</a></li>
       <li class="nav-item"><a class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
   </ul>
+  <a class="btn btn-danger navbar-btn" href="php/logout.php">Logout</a>
   <span></span>
     </div>
 </nav>

@@ -102,6 +102,13 @@
       const btnLogin = document.querySelector("#btnlogin");
       btnLogin.onclick = enviaForm;
 
+      const senha = document.querySelector("#senha");
+      senha.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          enviaForm;
+        }
+});
+
       const btnAlert  = document.querySelector(".btn-close");
       btnAlert.onclick = closeAlert;
     }

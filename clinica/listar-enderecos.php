@@ -57,6 +57,7 @@ HTML;
       <li class="nav-item"><a class="nav-link" href="listar-todos-agendamentos.php">Listar Agendamentos</a></li>
       <li class="nav-item"><a class="nav-link" href="listar-enderecos.php"><b>Listar Endereços</b></a></li> 
   </ul>
+  <a class="btn btn-danger navbar-btn" href="php/logout.php">Logout</a>
   <span></span>
     </div>
 </nav>
