@@ -6,15 +6,20 @@ if(!check_sessao()){
 }
 
 $pdo = mysqlConnect();
+session_start();
+$medico = $_SESSION["codigo"];
 
 try {
 
   $sql = <<<SQL
-  SELECT a.codigo, a.nome, a.p_data, a.horario, a.sexo, a.email, a.codigo_medico, m.nome as medico
-    FROM p_agenda a
-      INNER JOIN p_pessoa m ON a.codigo_medico = m.codigo
+  SELECT codigo, nome, p_data, horario, sexo, email
+    FROM p_agenda
+      WHERE codigo_medico = ?
   SQL;
-  $stmt = $pdo->query($sql);
+  $stmt = $pdo->prepare($sql);
+
+
+  $stmt->execute([$medico]);
 } 
 catch (Exception $e) {
   exit('Ocorreu uma falha: ' . $e->getMessage());
@@ -70,7 +75,6 @@ HTML;
         <th>Horário</th>
         <th>Sexo</th>
         <th>Email</th>
-        <th>Médico</th>
       </tr>
 
       <?php
@@ -81,7 +85,6 @@ HTML;
         $horario = htmlspecialchars($row['horario']);
         $sexo = htmlspecialchars($row['sexo']);
         $email = htmlspecialchars($row['email']);
-        $medico = htmlspecialchars($row['medico']);
 
         echo <<<HTML
           <tr>
@@ -91,7 +94,6 @@ HTML;
             <td>$horario</td>
             <td>$sexo</td>
             <td>$email</td>
-            <td>$medico</td>
           </tr>      
         HTML;
 
@@ -103,6 +105,5 @@ HTML;
     <footer class="fixed-bottom">
       05 de Março de 2022. Projeto de Programaçao para internet <strong>UFU</strong>.
   </footer>
-  <script src="priv-navbar.js"></script>
 </body>
 </html>

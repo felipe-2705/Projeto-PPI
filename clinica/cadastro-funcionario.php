@@ -34,20 +34,19 @@ echo <<<HTML
           </a>
 HTML;
 ?>
-            <ul class="navbar-nav" id="navbar">
-                <li class="nav-item active"><a  class="nav-link"  href="cadastro-funcionario.php"><b>Novo funcionario</b></a></li>
-                <li  class="nav-item"><a class="nav-link"  href="cadastro-paciente.php">Novo paciente</a></li>
-                <li  class="nav-item"><a  class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
-                <li  class="nav-item"><a  class="nav-link" href="listar-pacientes.php">Listar Pacientes</a></li>
-                <li  class="nav-item"><a  class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
-                <li  class="nav-item"><a  class="nav-link" href="listar-todos-agendamentos.php">Listar todos agendamentos</a></li>
-            </ul>
-            <span></span>
-    </div>
+    <ul class="navbar-nav" id="navbar">
+      <li class="nav-item"><a class="nav-link" href="cadastro-funcionario.php"><b>Novo Funcionário</b></a></li>
+      <li class="nav-item"><a class="nav-link" href="cadastro-paciente.php">Novo Paciente</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-pacientes.php">Listar Pacientes</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-todos-agendamentos.php">Listar Agendamentos</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
+    </ul>
+    <span></span>
+</div>
 </nav>
   <div class="container">
     <main>
-      <h1>Cadastro de Funcionario</h1>
       <form class="row g-3">
 
         <!-- Nome e Sexo -->
@@ -58,7 +57,7 @@ HTML;
         <div class="col-sm-3">
           <label for="sexo" class="form-label">Sexo</label>
           <select name="sexo" class="form-select" id="sexo">
-            <option selected>Selecione</option>
+            <option selected disabled ></option>
             <option value="M">Masculino</option>
             <option value="F">Feminino</option>
             <option value="O">Outros</option>
@@ -85,7 +84,7 @@ HTML;
         <div class="col-sm-3">
           <label for="estado" class="form-label">Estado</label>
           <select name="estado" class="form-select" id="estado">
-            <option selected>Selecione</option>
+            <option selected disabled ></option>
             <option value="MG">MG</option>
             <option value="RJ">RJ</option>
             <option value="SP">SP</option>
@@ -243,6 +242,7 @@ HTML;
     </script>
 
     <script src="priv-navbar.js"></script>
+    
     <footer class="fixed-bottom">
       05 de Março de 2022. Projeto de Programaçao para internet <strong>UFU</strong>.
   </footer>

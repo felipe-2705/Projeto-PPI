@@ -12,7 +12,7 @@ async function addnavbar(){
     item.appendChild(link);
 
     let container =  document.querySelector("#navbar");
-    container.appendChild(item);
+    container.prepend(item);
 }
 
 async function getSessionVars(){

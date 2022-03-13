@@ -10,9 +10,8 @@ $pdo = mysqlConnect();
 try {
 
   $sql = <<<SQL
-  SELECT a.codigo, a.nome, a.p_data, a.horario, a.sexo, a.email, a.codigo_medico, m.nome as medico
-    FROM p_agenda a
-      INNER JOIN p_pessoa m ON a.codigo_medico = m.codigo
+  SELECT id, cep, logradouro, cidade, estado
+    FROM p_endereco
   SQL;
   $stmt = $pdo->query($sql);
 } 
@@ -55,8 +54,8 @@ HTML;
       <li class="nav-item"><a class="nav-link" href="cadastro-paciente.php">Novo Paciente</a></li>
       <li class="nav-item"><a class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
       <li class="nav-item"><a class="nav-link" href="listar-pacientes.php">Listar Pacientes</a></li>
-      <li class="nav-item"><a class="nav-link" href="listar-todos-agendamentos.php"><b>Listar Agendamentos</b></a></li>
-      <li class="nav-item"><a class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
+      <li class="nav-item"><a class="nav-link" href="listar-todos-agendamentos.php">Listar Agendamentos</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-enderecos.php"><b>Listar Endereços</b></a></li> 
   </ul>
   <span></span>
     </div>
@@ -64,37 +63,30 @@ HTML;
 <main class="container">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Codigo</th>
-        <th>Nome</th>
-        <th>Data</th>
-        <th>Horário</th>
-        <th>Sexo</th>
-        <th>Email</th>
-        <th>Médico</th>
+        <th>Id</th>
+        <th>CEP</th>
+        <th>Logradouro</th>
+        <th>Cidade</th>
+        <th>Estado</th>
       </tr>
 
       <?php
       while ($row = $stmt->fetch()) {
-        $codigo = htmlspecialchars($row['codigo']);
-        $nome = htmlspecialchars($row['nome']);
-        $data = htmlspecialchars($row['p_data']);
-        $horario = htmlspecialchars($row['horario']);
-        $sexo = htmlspecialchars($row['sexo']);
-        $email = htmlspecialchars($row['email']);
-        $medico = htmlspecialchars($row['medico']);
+        $id = htmlspecialchars($row['id']);
+        $cep = htmlspecialchars($row['cep']);
+        $logradouro = htmlspecialchars($row['logradouro']);
+        $cidade = htmlspecialchars($row['cidade']);
+        $estado = htmlspecialchars($row['estado']);
 
         echo <<<HTML
           <tr>
-            <td>$codigo</td> 
-            <td>$nome</td>
-            <td>$data</td>
-            <td>$horario</td>
-            <td>$sexo</td>
-            <td>$email</td>
-            <td>$medico</td>
+            <td>$id</td> 
+            <td>$cep</td>
+            <td>$logradouro</td>
+            <td>$cidade</td>
+            <td>$estado</td>
           </tr>      
         HTML;
-
       }
       ?>
 

@@ -52,12 +52,12 @@ echo <<<HTML
 HTML;
 ?>
   <ul class="navbar-nav" id="navbar">
-      <li class="nav-item active"><a  class="nav-link"  href="cadastro-funcionario.php">Novo funcionario</a></li>
-      <li  class="nav-item"><a class="nav-link"  href="cadastro-paciente.php">Novo paciente</a></li>
-      <li  class="nav-item"><a  class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
-      <li  class="nav-item"><a  class="nav-link" href="listar-pacientes.php"><b>Listar Pacientes</b></a></li>
-      <li  class="nav-item"><a  class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
-      <li  class="nav-item"><a  class="nav-link" href="listar-todos-agendamentos.php">Listar todos agendamentos</a></li>
+      <li class="nav-item"><a class="nav-link" href="cadastro-funcionario.php">Novo Funcionário</a></li>
+      <li class="nav-item"><a class="nav-link" href="cadastro-paciente.php">Novo Paciente</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-pacientes.php"><b>Listar Pacientes</b></a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-todos-agendamentos.php">Listar Agendamentos</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
   </ul>
   <span></span>
     </div>
@@ -119,5 +119,6 @@ HTML;
     <footer class="fixed-bottom">
       05 de Março de 2022. Projeto de Programaçao para internet <strong>UFU</strong>.
   </footer>
+  <script src="priv-navbar.js"></script>
 </body>
 </html>

@@ -34,20 +34,19 @@ echo <<<HTML
           </a>
 HTML;
 ?>
-            <ul class="navbar-nav" id="navbar">
-                <li class="nav-item active"><a  class="nav-link"  href="cadastro-funcionario.php">Novo funcionario</a></li>
-                <li  class="nav-item"><a class="nav-link"  href="cadastro-paciente.php"><b>Novo paciente</b></a></li>
-                <li  class="nav-item"><a  class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
-                <li  class="nav-item"><a  class="nav-link" href="listar-pacientes.php">Listar Pacientes</a></li>
-                <li  class="nav-item"><a  class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
-                <li  class="nav-item"><a  class="nav-link" href="listar-todos-agendamentos.php">Listar todos agendamentos</a></li>
-            </ul>
-            <span></span>
-    </div>
+    <ul class="navbar-nav" id="navbar">
+      <li class="nav-item"><a class="nav-link" href="cadastro-funcionario.php">Novo Funcionário</a></li>
+      <li class="nav-item"><a class="nav-link" href="cadastro-paciente.php"><b>Novo Paciente</b></a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-pacientes.php">Listar Pacientes</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-todos-agendamentos.php">Listar Agendamentos</a></li>
+      <li class="nav-item"><a class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
+    </ul>
+    <span></span>
+</div>
 </nav>
   <div class="container">
     <main>
-      <h1>Cadastro de Paciente</h1>
       <form class="row g-3">
 
         <!-- Nome e Sexo -->
@@ -58,7 +57,7 @@ HTML;
         <div class="col-sm-3">
           <label for="sexo" class="form-label">Sexo</label>
           <select name="sexo" class="form-select" id="sexo">
-            <option selected>Selecione</option>
+            <option selected disabled></option>
             <option value="M">Masculino</option>
             <option value="F">Feminino</option>
             <option value="O">Outros</option>
@@ -66,9 +65,8 @@ HTML;
         </div>
 
         <div class="col-sm-3">
-          <label for="tipo-sanguineo" class="form-label">Tipo Sanguineo</label>
           <select name="tipo-sanguineo" class="form-select" id="tipo-sanguineo">
-            <option selected>Selecione</option>
+            <option selected disabled></option>
             <option value="O-">O-</option>
             <option value="O+">O+</option>
             <option value="A-">A-</option>
@@ -78,6 +76,7 @@ HTML;
             <option value="AB-">AB-</option>
             <option value="AB+">AB+</option>
           </select>
+          <label for="tipo-sanguineo" class="form-label">Tipo Sanguineo</label>
         </div>
 
          <!-- Telefone CEP LOGRADOURO CIDADE BAIRRO ESTADO-->
@@ -95,7 +94,7 @@ HTML;
         <div class="col-sm-3">
           <label for="estado" class="form-label">Estado</label>
           <select name="estado" class="form-select" id="estado">
-            <option selected>Selecione</option>
+            <option selected disabled></option>
             <option value="MG">MG</option>
             <option value="RJ">RJ</option>
             <option value="SP">SP</option>
