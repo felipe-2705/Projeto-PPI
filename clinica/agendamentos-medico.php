@@ -6,18 +6,18 @@ if(!check_sessao()){
 }
 
 $pdo = mysqlConnect();
-$medico = $_SESSION["codigo"];
 
 try {
-
+  
   $sql = <<<SQL
   SELECT codigo, nome, p_data, horario, sexo, email
     FROM p_agenda
       WHERE codigo_medico = ?
   SQL;
   $stmt = $pdo->prepare($sql);
-
-
+  
+  
+  $medico = $_SESSION["codigo"];
   $stmt->execute([$medico]);
 } 
 catch (Exception $e) {
