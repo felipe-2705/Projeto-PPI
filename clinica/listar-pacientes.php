@@ -54,8 +54,8 @@ HTML;
   <ul class="navbar-nav" id="navbar">
       <li class="nav-item active"><a  class="nav-link"  href="cadastro-funcionario.php">Novo funcionario</a></li>
       <li  class="nav-item"><a class="nav-link"  href="cadastro-paciente.php">Novo paciente</a></li>
-      <li  class="nav-item"><a  class="nav-link" href="listar-funcionarios.php"><b>Listar Funcionários</b></a></li>
-      <li  class="nav-item"><a  class="nav-link" href="listar-pacientes.php">Listar Pacientes</a></li>
+      <li  class="nav-item"><a  class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
+      <li  class="nav-item"><a  class="nav-link" href="listar-pacientes.php"><b>Listar Pacientes</b></a></li>
       <li  class="nav-item"><a  class="nav-link" href="listar-enderecos.php">Listar Endereços</a></li> 
       <li  class="nav-item"><a  class="nav-link" href="listar-todos-agendamentos.php">Listar todos agendamentos</a></li>
   </ul>
