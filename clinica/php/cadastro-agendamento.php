@@ -1,7 +1,6 @@
 <?php
 
-// require "conexaoMysql.php";
-require "conexaoMysql-cassio.php";
+require "conexaoMysql.php";
 $pdo = mysqlConnect();
 
 $medico = $_POST["medico"] ?? "";

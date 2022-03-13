@@ -7,8 +7,6 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
-  <!-- <link href="css/cadastro-funcionario.css" rel="stylesheet">
-  <link href="css/navbar.css" rel="stylesheet"> -->
   <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -40,8 +38,7 @@
                 <select required name="especialidade" class="form-select" id="especialidade">
                     <option disabled="" selected=""></option>
                     <?php
-                        // require "conexaoMysql.php";
-                        require "php/conexaoMysql-cassio.php";
+                        require "conexaoMysql.php";
                         $pdo = mysqlConnect();
                         
                         try{
