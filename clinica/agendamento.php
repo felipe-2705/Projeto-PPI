@@ -38,7 +38,7 @@
                 <select required name="especialidade" class="form-select" id="especialidade">
                     <option disabled="" selected=""></option>
                     <?php
-                        require "conexaoMysql.php";
+                        require "php/conexaoMysql.php";
                         $pdo = mysqlConnect();
                         
                         try{
