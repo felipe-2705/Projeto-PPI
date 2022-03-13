@@ -15,8 +15,9 @@ if(!check_sessao()){
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
-  <link href="css/cadastro-funcionario.css" rel="stylesheet">
-  <link href="css/navbar.css" rel="stylesheet">
+  <!-- <link href="css/cadastro-funcionario.css" rel="stylesheet">
+  <link href="css/navbar.css" rel="stylesheet"> -->
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,7 +37,7 @@ echo <<<HTML
 HTML;
 ?>
             <ul class="navbar-nav" id="navbar">
-                <li class="nav-item active"><a  class="nav-link"  href="cadastro-funcionario.php">Novo funcionario</a></li>
+                <li class="nav-item active"><a  class="nav-link"  href="cadastro-funcionario.php"><b>Novo funcionario</b></a></li>
                 <li  class="nav-item"><a class="nav-link"  href="cadastro-paciente.php">Novo paciente</a></li>
                 <li  class="nav-item"><a  class="nav-link" href="listar-funcionarios.php">Listar Funcionários</a></li>
                 <li  class="nav-item"><a  class="nav-link" href="listar-pacientes.php">Listar Pacientes</a></li>

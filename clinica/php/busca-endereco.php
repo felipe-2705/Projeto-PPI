@@ -15,7 +15,8 @@ class Endereco
 }
 $cep = $_GET['cep'] ?? '';
 
-require  "conexaoMysql.php";
+// require  "conexaoMysql.php";
+require "conexaoMysql-cassio.php";
 $pdo = mysqlConnect();
 
 try{
