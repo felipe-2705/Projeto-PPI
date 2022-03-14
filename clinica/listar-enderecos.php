@@ -12,7 +12,7 @@ try {
   $sql = <<<SQL
   SELECT id, cep, logradouro, cidade, estado
     FROM p_endereco
-  SQL;
+SQL;
   $stmt = $pdo->query($sql);
 } 
 catch (Exception $e) {
@@ -35,7 +35,7 @@ catch (Exception $e) {
 
 <body>
   <header>
-      <img src="images/coqueiro.png" alt="" id="foto">
+      <img src="images/coqueiro.png" alt="" id="logo">
   <div id="h1">Cliníca São Domingos</div>
 </header>
 
@@ -87,7 +87,7 @@ HTML;
             <td>$cidade</td>
             <td>$estado</td>
           </tr>      
-        HTML;
+HTML;
       }
       ?>
 

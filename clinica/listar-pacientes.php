@@ -14,7 +14,7 @@ try {
          pc.peso, pc.altura, pc.tipo_sanguineo
     FROM p_paciente pc
       INNER JOIN p_pessoa p ON pc.codigo = p.codigo
-  SQL;
+SQL;
   $stmt = $pdo->query($sql);
 } 
 catch (Exception $e) {
@@ -37,7 +37,7 @@ catch (Exception $e) {
 
 <body>
   <header>
-      <img src="images/coqueiro.png" alt="" id="foto">
+      <img src="images/coqueiro.png" alt="" id="logo">
   <div id="h1">Cliníca São Domingos</div>
 </header>
 
@@ -110,7 +110,7 @@ HTML;
             <td>$cidade</td>
             <td>$estado</td>
           </tr>      
-        HTML;
+HTML;
 
       }
       ?>

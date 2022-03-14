@@ -13,7 +13,7 @@ try {
   SELECT a.codigo, a.nome, a.p_data, a.horario, a.sexo, a.email, a.codigo_medico, m.nome as medico
     FROM p_agenda a
       INNER JOIN p_pessoa m ON a.codigo_medico = m.codigo
-  SQL;
+SQL;
   $stmt = $pdo->query($sql);
 } 
 catch (Exception $e) {
@@ -36,7 +36,7 @@ catch (Exception $e) {
 
 <body>
   <header>
-      <img src="images/coqueiro.png" alt="" id="foto">
+      <img src="images/coqueiro.png" alt="" id="logo">
   <div id="h1">Cliníca São Domingos</div>
 </header>
 
@@ -94,7 +94,7 @@ HTML;
             <td>$email</td>
             <td>$medico</td>
           </tr>      
-        HTML;
+HTML;
 
       }
       ?>
