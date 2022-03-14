@@ -4,19 +4,15 @@ if(!check_sessao()){
       header("location: login.html");
       exit();
 }
-
 $pdo = mysqlConnect();
-
 try {
   
   $sql = <<<SQL
   SELECT codigo, nome, p_data, horario, sexo, email
     FROM p_agenda
       WHERE codigo_medico = ?
-  SQL;
+SQL;
   $stmt = $pdo->prepare($sql);
-  
-  
   $medico = $_SESSION["codigo"];
   $stmt->execute([$medico]);
 } 
@@ -40,7 +36,7 @@ catch (Exception $e) {
 
 <body>
   <header>
-      <img src="images/coqueiro.png" alt="" id="foto">
+      <img src="images/coqueiro.png" alt="" id="logo">
   <div id="h1">Cliníca São Domingos</div>
 </header>
 
@@ -96,8 +92,7 @@ HTML;
             <td>$sexo</td>
             <td>$email</td>
           </tr>      
-        HTML;
-
+HTML;
       }
       ?>
 

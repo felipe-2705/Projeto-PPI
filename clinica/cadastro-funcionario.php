@@ -20,7 +20,7 @@ if(!check_sessao()){
 
 <body>
 <header>
-    <img src="images/coqueiro.png" alt="" id="foto">
+    <img src="images/coqueiro.png" alt="" id="logo">
 <div id="h1">Cliníca São Domingos</div>
 </header>
 

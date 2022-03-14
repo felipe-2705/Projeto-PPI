@@ -15,7 +15,7 @@ try {
     FROM p_funcionario f
       LEFT JOIN p_pessoa p ON f.codigo = p.codigo
       LEFT JOIN p_medico m ON f.codigo = m.codigo
-  SQL;
+SQL;
   $stmt = $pdo->query($sql);
 } 
 catch (Exception $e) {
@@ -38,7 +38,7 @@ catch (Exception $e) {
 
 <body>
   <header>
-      <img width="220" height="100" class="header_logo header-logo" src="images/coqueiro.png"  alt="" >
+      <img width="220" height="100" class="header_logo header-logo" src="images/coqueiro.png"  alt=""  id="logo">
   <div id="h1">Cliníca São Domingos</div>
 </header>
 
@@ -114,7 +114,7 @@ HTML;
             <td>$crm</td>
             <td>$especialidade</td>
           </tr>      
-        HTML;
+HTML;
 
       }
       ?>
