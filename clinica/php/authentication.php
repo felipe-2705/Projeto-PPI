@@ -27,6 +27,7 @@ return FALSE;
 
 
 function inicia_sessao($email,$senha){
+    session_start();
     $pdo = mysqlConnect();
     try{
         $sql = <<<SQL
@@ -41,7 +42,6 @@ catch (Exception $e) {
 }
 while($row = $stmt->fetch()){
     if($row['email']==$email and password_verify($senha,$row["senha_hash"]) ){
-        session_start();
         $_SESSION["email"] = $email;
         $_SESSION["senha_hash"] = $row["senha_hash"];
         $_SESSION["nome"] = $row["nome"];
@@ -53,7 +53,7 @@ while($row = $stmt->fetch()){
         $_SESSION["estado"] = $row["estado"];
         $_SESSION["data_contrato"] = $row["data_contrato"];
         $_SESSION["salario"] = $row["salario"];
-        $_SESSION["codigo"]  = $row["p_pessoa.codigo"];
+        $_SESSION["codigo"]  = $row["codigo"];
         ////// checando se é um medico 
         try{
             $sql = <<<SQL
