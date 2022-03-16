@@ -4,23 +4,7 @@ if(!check_sessao()){
       header("location: login.html");
       exit();
 }
-$pdo = mysqlConnect();
-try {
-  
-  $sql = <<<SQL
-  SELECT codigo, nome, p_data, horario, sexo, email
-    FROM p_agenda
-      WHERE codigo_medico = ?
-SQL;
-  $stmt = $pdo->prepare($sql);
-  $medico = $_SESSION["codigo"];
-  $stmt->execute([$medico]);
-} 
-catch (Exception $e) {
-  exit('Ocorreu uma falha: ' . $e->getMessage());
-}
 ?>
-
 <!doctype html>
 <html lang="pt-BR">
 
@@ -74,32 +58,60 @@ HTML;
         <th>Email</th>
       </tr>
 
-      <?php
-      while ($row = $stmt->fetch()) {
-        $codigo = htmlspecialchars($row['codigo']);
-        $nome = htmlspecialchars($row['nome']);
-        $data = htmlspecialchars($row['p_data']);
-        $horario = htmlspecialchars($row['horario']);
-        $sexo = htmlspecialchars($row['sexo']);
-        $email = htmlspecialchars($row['email']);
-
-        echo <<<HTML
-          <tr>
-            <td>$codigo</td> 
-            <td>$nome</td>
-            <td>$data</td>
-            <td>$horario</td>
-            <td>$sexo</td>
-            <td>$email</td>
-          </tr>      
-HTML;
-      }
-      ?>
-
     </table>
 </main>
     <footer class="fixed-bottom">
       05 de Março de 2022. Projeto de Programaçao para internet <strong>UFU</strong>.
   </footer>
 </body>
+
+<script>
+   function envia() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET","./php/agendamentos-medi.php");
+      xhr.onload = function () {
+        if (xhr.status != 200) {
+          console.error("Falha inesperada: " + xhr.responseText);
+          return;
+        }
+        try {
+          var response = JSON.parse(xhr.responseText);
+        }
+        catch (e) {
+          console.error("String JSON inválida: " + xhr.responseText);
+          return;
+        }
+        let table = document.querySelector("table");
+        for(let i=0;i<response.length;i++){
+          let row =  response[i];
+          let tablerow = document.createElement("tr");
+            let item = document.createElement("td");
+            item.textContent = row["codigo"];
+            tablerow.appendChild(item);
+            item = document.createElement("td");
+            item.textContent = row["nome"];
+            tablerow.appendChild(item);
+            item = document.createElement("td");
+            item.textContent = row["data"];
+            tablerow.appendChild(item);
+            item = document.createElement("td");
+            item.textContent = row["horario"];
+            tablerow.appendChild(item);
+            item = document.createElement("td");
+            item.textContent = row["sexo"];
+            tablerow.appendChild(item);
+            item = document.createElement("td");
+            item.textContent = row["email"];
+            tablerow.appendChild(item);
+          table.appendChild(tablerow);
+        }
+      }
+      xhr.onerror = function () {
+        console.error("Erro de rede - requisição não finalizada");
+      };
+      xhr.send();
+    }
+
+    window.addEventListener("DOMContentLoaded",envia);
+</script>
 </html>
