@@ -10,8 +10,9 @@ $pdo = mysqlConnect();
 try {
 
   $sql = <<<SQL
-  SELECT id, cep, logradouro, cidade, estado
-    FROM p_endereco
+ SELECT nome_dep, relacao, data_nascimento, nome_seg, cpf, email, premio
+FROM dependente, segurado
+WHERE segurado.id = dependente.id_segurado
 SQL;
   $stmt = $pdo->query($sql);
 } 
