@@ -51,39 +51,38 @@ HTML;
       <form class="row g-3">
 
         <!-- Nome e Sexo -->
-        <div class="col-sm-6">
+        <div class="form-floating col-sm-6">
+          <input placeholder=" " type="text" name="nome" class="form-control" id="nome">
           <label for="nome" class="form-label">Nome completo</label>
-          <input type="text" name="nome" class="form-control" id="nome">
         </div>
-        <div class="col-sm-3">
-          <label for="sexo" class="form-label">Sexo</label>
+        <div class="form-floating col-sm-3">
           <select name="sexo" class="form-select" id="sexo">
             <option selected disabled ></option>
             <option value="M">Masculino</option>
             <option value="F">Feminino</option>
             <option value="O">Outros</option>
           </select>
+          <label for="sexo" class="form-label">Sexo</label>
         </div>
 
-        <div class="col-sm-3">
-        <input type="checkbox" class="form-check-input" name="medico" id="medico">
-        <label for="medico" class="form-check-label">Medico</label>
+        <div class="form-floating col-sm-3">
+          <input placeholder=" " type="checkbox" class="form-check-input" name="medico" id="medico">
+          <label for="medico" class="form-check-label">Medico</label>
         </div>
 
          <!-- Telefone CEP LOGRADOURO CIDADE BAIRRO ESTADO-->
 
-         <div class="col-sm-6">
-          <label for="telefone" class="form-label">Telefone</label>
-          <input type="tel" name="telefone" class="form-control" id="telefone">
+         <div class="form-floating col-sm-6">
+           <input placeholder=" " type="tel" name="telefone" class="form-control" id="telefone">
+           <label for="telefone" class="form-label">Telefone</label>
         </div>
         
-        <div class="col-sm-3">
+        <div class="form-floating col-sm-3">
+          <input placeholder=" " type="text" name="cep" class="form-control" id="cep">
           <label for="cep" class="form-label">CEP</label>
-          <input type="text" name="cep" class="form-control" id="cep">
         </div>
 
-        <div class="col-sm-3">
-          <label for="estado" class="form-label">Estado</label>
+        <div class="form-floating col-sm-3">
           <select name="estado" class="form-select" id="estado">
             <option selected disabled ></option>
             <option value="MG">MG</option>
@@ -113,44 +112,45 @@ HTML;
             <option value="AM">AM</option>
             <option value="AC">AC</option>
           </select>
+          <label for="estado" class="form-label">Estado</label>
         </div>
 
 
-        <div class="col-sm-6">
+        <div class="form-floating col-sm-6">
+          <input placeholder=" " type="text" name="logradouro" class="form-control" id="logradouro">
           <label for="logradouro" class="form-label">Logradouro</label>
-          <input type="text" name="logradouro" class="form-control" id="logradouro">
         </div>
 
-        <div class="col-sm-6">
+        <div class="form-floating col-sm-6">
+          <input placeholder=" " type="text" name="cidade" class="form-control" id="cidade">
           <label for="cidade" class="form-label">Cidade</label>
-          <input type="text" name="cidade" class="form-control" id="cidade">
         </div>
 
         <!-- Data de contrato  salario dados medicos-->
-        <div class="col-sm">
+        <div class="form-floating col-sm">
+          <input placeholder=" " type="date" name="data-contrato" class="form-control" id="data-contrato">
           <label for="data-contrato" class="form-label">Data de Contrato</label>
-          <input type="date" name="data-contrato" class="form-control" id="data-contrato">
         </div>
-        <div class="col-sm">
+        <div class="form-floating col-sm">
+          <input placeholder=" " type="text" name="salario" class="form-control" id="salario">
           <label for="salario" class="form-label">Salario</label>
-          <input type="text" name="salario" class="form-control" id="salario">
         </div>
-        <div class="col-sm med-camp " style="display: none;">
-        <label for="crm" class="form-label">CRM</label>
-          <input type="text" name="crm" class="form-control" id="crm">
+        <div class="form-floating col-sm med-camp " style="display: none;">
+          <input placeholder=" " type="text" name="crm" class="form-control" id="crm">
+          <label for="crm" class="form-label">CRM</label>
         </div>
-        <div class="col-sm med-camp" style="display: none;">
-        <label for="especialidade" class="form-label">Especialidade</label>
-          <input type="text" name="especialidade" class="form-control" id="especialidade">
+        <div class="form-floating col-sm med-camp" style="display: none;">
+          <input placeholder=" " type="text" name="especialidade" class="form-control" id="especialidade">
+          <label for="especialidade" class="form-label">Especialidade</label>
         </div>
 <!-- E-mail e senha -->
-        <div class="col-sm-9">
+        <div class="form-floating col-sm-9">
+          <input placeholder=" " type="email" name="email" class="form-control" id="email">
           <label for="email" class="form-label">E-mail</label>
-          <input type="email" name="email" class="form-control" id="email">
         </div>
-        <div class="col-sm-3">
+        <div class="form-floating col-sm-3">
+          <input placeholder=" " type="password" name="senha" class="form-control" id="senha">
           <label for="senha" class="form-label">Senha</label>
-          <input type="password" name="senha" class="form-control" id="senha">
         </div>
 
 

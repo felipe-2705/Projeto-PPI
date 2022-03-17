@@ -51,21 +51,21 @@ HTML;
       <form class="row g-3">
 
         <!-- Nome e Sexo -->
-        <div class="col-sm-6">
+        <div class="form-floating col-sm-6">
+          <input placeholder=" " type="text" name="nome" class="form-control" id="nome">
           <label for="nome" class="form-label">Nome completo</label>
-          <input type="text" name="nome" class="form-control" id="nome">
         </div>
-        <div class="col-sm-3">
-          <label for="sexo" class="form-label">Sexo</label>
+        <div class="form-floating col-sm-3">
           <select name="sexo" class="form-select" id="sexo">
             <option selected disabled></option>
             <option value="M">Masculino</option>
             <option value="F">Feminino</option>
             <option value="O">Outros</option>
           </select>
+          <label for="sexo" class="form-label">Sexo</label>
         </div>
 
-        <div class="col-sm-3">
+        <div class="form-floating col-sm-3">
           <select name="tipo-sanguineo" class="form-select" id="tipo-sanguineo">
             <option selected disabled></option>
             <option value="O-">O-</option>
@@ -82,18 +82,17 @@ HTML;
 
          <!-- Telefone CEP LOGRADOURO CIDADE BAIRRO ESTADO-->
 
-         <div class="col-sm-6">
-          <label for="telefone" class="form-label">Telefone</label>
-          <input type="tel" name="telefone" class="form-control" id="telefone">
+         <div class="form-floating col-sm-6">
+           <input placeholder=" " type="tel" name="telefone" class="form-control" id="telefone">
+           <label for="telefone" class="form-label">Telefone</label>
         </div>
         
-        <div class="col-sm-3">
+        <div class="form-floating col-sm-3">
+          <input placeholder=" " type="text" name="cep" class="form-control" id="cep">
           <label for="cep" class="form-label">CEP</label>
-          <input type="text" name="cep" class="form-control" id="cep">
         </div>
 
-        <div class="col-sm-3">
-          <label for="estado" class="form-label">Estado</label>
+        <div class="form-floating col-sm-3">
           <select name="estado" class="form-select" id="estado">
             <option selected disabled></option>
             <option value="MG">MG</option>
@@ -123,36 +122,37 @@ HTML;
             <option value="AM">AM</option>
             <option value="AC">AC</option>
           </select>
+          <label for="estado" class="form-label">Estado</label>
         </div>
-
-
-        <div class="col-sm-6">
+        
+        
+        <div class="form-floating col-sm-6">
+          <input placeholder=" " type="text" name="logradouro" class="form-control" id="logradouro">
           <label for="logradouro" class="form-label">Logradouro</label>
-          <input type="text" name="logradouro" class="form-control" id="logradouro">
         </div>
-
-        <div class="col-sm-6">
+        
+        <div class="form-floating col-sm-6">
+          <input placeholder=" " type="text" name="cidade" class="form-control" id="cidade">
           <label for="cidade" class="form-label">Cidade</label>
-          <input type="text" name="cidade" class="form-control" id="cidade">
         </div>
 
 <!-- E-mail e senha -->
-        <div class="col-sm-12">
+        <div class="form-floating col-sm-12">
+          <input placeholder=" " type="email" name="email" class="form-control" id="email">
           <label for="email" class="form-label">E-mail</label>
-          <input type="email" name="email" class="form-control" id="email">
         </div>
 
-        <div class="col-sm-6">
+        <div class="form-floating col-sm-6">
+          <input placeholder=" " type="text" name="altura" class="form-control" id="altura">
           <label for="altura" class="form-label">Altura</label>
-          <input type="text" name="altura" class="form-control" id="altura">
         </div>
 
-        <div class="col-sm-6">
+        <div class="form-floating col-sm-6">
+          <input placeholder=" " type="text" name="peso" class="form-control" id="peso">
           <label for="peso" class="form-label">Peso</label>
-          <input type="text" name="peso" class="form-control" id="peso">
         </div>
 
-        <div class="col-12">
+        <div class="form-floating col-12">
           <button type="button" class="btn btn-primary" id="btncadastro">Cadastrar</button>
         </div>
       </form>
