@@ -11,7 +11,7 @@ try{
     SELECT horario  
     FROM p_agenda
     WHERE p_data = ? AND codigo_medico = ?
-    SQL;
+SQL;
 
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$p_data,$codigo_medico]);

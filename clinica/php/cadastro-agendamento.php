@@ -15,7 +15,7 @@ try {
   $sql = <<<SQL
   INSERT INTO p_agenda (codigo_medico, p_data, horario, nome, email, sexo)
     VALUES (?, ?, ?, ?, ?, ?)
-  SQL;
+SQL;
 
   $stmt = $pdo->prepare($sql);
   $stmt->execute([

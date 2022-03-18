@@ -9,7 +9,7 @@ $pdo = mysqlConnect();
 try {
 
   $sql = <<<SQL
-  SELECT p.codigo, p.nome, p.sexo, p.email, p.telefone, p.cep, p.logradouro, p.cidade, p.estado,
+  SELECT p.nome, p.sexo, p.email, p.telefone, p.cep, p.logradouro, p.cidade, p.estado,
          f.data_contrato, f.salario,
          m.crm, m.especialidade
     FROM p_funcionario f
@@ -67,7 +67,6 @@ HTML;
 <main class="container">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Codigo</th>
         <th>Nome</th>
         <th>Sexo</th>
         <th>Email</th>
@@ -84,7 +83,6 @@ HTML;
 
       <?php
       while ($row = $stmt->fetch()) {
-        $codigo = htmlspecialchars($row['codigo']);
         $nome = htmlspecialchars($row['nome']);
         $sexo = htmlspecialchars($row['sexo']);
         $email = htmlspecialchars($row['email']);
@@ -100,7 +98,6 @@ HTML;
 
         echo <<<HTML
           <tr>
-            <td>$codigo</td> 
             <td>$nome</td>
             <td>$sexo</td>
             <td>$email</td>

@@ -10,7 +10,7 @@ $pdo = mysqlConnect();
 try {
 
   $sql = <<<SQL
-  SELECT a.codigo, a.nome, a.p_data, a.horario, a.sexo, a.email, a.codigo_medico, m.nome as medico
+  SELECT a.nome, a.p_data, a.horario, a.sexo, a.email, a.codigo_medico, m.nome as medico
     FROM p_agenda a
       INNER JOIN p_pessoa m ON a.codigo_medico = m.codigo
 SQL;
@@ -27,7 +27,7 @@ catch (Exception $e) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Funcionários</title>
+  <title>Agendamentos</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
@@ -65,7 +65,6 @@ HTML;
 <main class="container">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Codigo</th>
         <th>Nome</th>
         <th>Data</th>
         <th>Horário</th>
@@ -76,7 +75,6 @@ HTML;
 
       <?php
       while ($row = $stmt->fetch()) {
-        $codigo = htmlspecialchars($row['codigo']);
         $nome = htmlspecialchars($row['nome']);
         $data = htmlspecialchars($row['p_data']);
         $horario = htmlspecialchars($row['horario']);
@@ -86,7 +84,6 @@ HTML;
 
         echo <<<HTML
           <tr>
-            <td>$codigo</td> 
             <td>$nome</td>
             <td>$data</td>
             <td>$horario</td>
