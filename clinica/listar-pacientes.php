@@ -10,7 +10,7 @@ $pdo = mysqlConnect();
 try {
 
   $sql = <<<SQL
-  SELECT p.codigo, p.nome, p.sexo, p.email, p.telefone, p.cep, p.logradouro, p.cidade, p.estado,
+  SELECT p.nome, p.sexo, p.email, p.telefone, p.cep, p.logradouro, p.cidade, p.estado,
          pc.peso, pc.altura, pc.tipo_sanguineo
     FROM p_paciente pc
       INNER JOIN p_pessoa p ON pc.codigo = p.codigo
@@ -28,7 +28,7 @@ catch (Exception $e) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Funcionários</title>
+  <title>Pacientes</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
@@ -66,7 +66,6 @@ HTML;
 <main class="container">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Codigo</th>
         <th>Nome</th>
         <th>Sexo</th>
         <th>Peso</th>
@@ -82,7 +81,6 @@ HTML;
 
       <?php
       while ($row = $stmt->fetch()) {
-        $codigo = htmlspecialchars($row['codigo']);
         $nome = htmlspecialchars($row['nome']);
         $sexo = htmlspecialchars($row['sexo']);
         $peso = htmlspecialchars($row['peso']);
@@ -97,7 +95,6 @@ HTML;
 
         echo <<<HTML
           <tr>
-            <td>$codigo</td> 
             <td>$nome</td>
             <td>$sexo</td>
             <td>$peso</td>

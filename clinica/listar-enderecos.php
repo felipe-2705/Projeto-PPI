@@ -10,9 +10,8 @@ $pdo = mysqlConnect();
 try {
 
   $sql = <<<SQL
- SELECT nome_dep, relacao, data_nascimento, nome_seg, cpf, email, premio
-FROM dependente, segurado
-WHERE segurado.id = dependente.id_segurado
+ SELECT cep, logradouro, estado, cidade
+FROM p_endereco
 SQL;
   $stmt = $pdo->query($sql);
 } 
@@ -27,7 +26,7 @@ catch (Exception $e) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Funcionários</title>
+  <title>Endereços</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
@@ -65,7 +64,6 @@ HTML;
 <main class="container">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Id</th>
         <th>CEP</th>
         <th>Logradouro</th>
         <th>Cidade</th>
@@ -74,7 +72,6 @@ HTML;
 
       <?php
       while ($row = $stmt->fetch()) {
-        $id = htmlspecialchars($row['id']);
         $cep = htmlspecialchars($row['cep']);
         $logradouro = htmlspecialchars($row['logradouro']);
         $cidade = htmlspecialchars($row['cidade']);
@@ -82,7 +79,6 @@ HTML;
 
         echo <<<HTML
           <tr>
-            <td>$id</td> 
             <td>$cep</td>
             <td>$logradouro</td>
             <td>$cidade</td>

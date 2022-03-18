@@ -9,7 +9,7 @@ try{
     FROM p_medico m
       INNER JOIN p_pessoa p ON m.codigo = p.codigo
     WHERE especialidade = ?
-    SQL;
+SQL;
 
   $stmt = $pdo->prepare($sql);
 } catch (Exception $e) {

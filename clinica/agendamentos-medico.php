@@ -11,7 +11,7 @@ if(!check_sessao()){
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Funcionários</title>
+  <title>Meus Agendamentos</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
@@ -50,7 +50,6 @@ HTML;
 <main class="container">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Codigo</th>
         <th>Nome</th>
         <th>Data</th>
         <th>Horário</th>
@@ -85,9 +84,6 @@ HTML;
         for(let i=0;i<response.length;i++){
           let row =  response[i];
           let tablerow = document.createElement("tr");
-            let item = document.createElement("td");
-            item.textContent = row["codigo"];
-            tablerow.appendChild(item);
             item = document.createElement("td");
             item.textContent = row["nome"];
             tablerow.appendChild(item);
